@@ -5,9 +5,9 @@ import callToApi from '../services/api';
 function App() {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState('');
+  const [select, setSelect] = useState('');
 
   useEffect(() => {
-    
     callToApi().then((response) => {
       setCountries(response);
     });
@@ -15,6 +15,9 @@ function App() {
 
   const handleSearch = (ev) => {
     setSearch(ev.target.value);
+  };
+  const handleSelect = (ev) => {
+    setSelect(ev.target.value);
   };
 
   const renderCountries = () => {
@@ -51,6 +54,12 @@ function App() {
               onChange={handleSearch}
             />
             <label htmlFor='select'>Continent</label>
+            <select
+              name='continent'
+              id='continent'
+              value={select}
+              onChange={handleSelect}
+            ></select>
           </form>
         </section>
         <section>
