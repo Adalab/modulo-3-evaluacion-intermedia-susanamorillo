@@ -1,4 +1,14 @@
-//para cada componente 
+.header {
+  display: flex;
+  align-items: center;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
 
-//importa cada layout
-//@import '../styles/nombre-de-fichero.scss';
+  list-style: none;
+}
+.countryList {
+  border: solid 1px purple;
+}

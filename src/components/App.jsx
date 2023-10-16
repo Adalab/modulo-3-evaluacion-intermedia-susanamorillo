@@ -25,8 +25,12 @@ function App() {
       .filter((eachCountry) =>
         eachCountry.name.toLowerCase().includes(search.toLowerCase())
       )
+      .filter((eachCountry) =>
+        eachCountry.continent.toLowerCase().includes(select.toLowerCase())
+      )
+
       .map((eachCountry, index) => (
-        <li key={index}>
+        <li className="countryList"key={index}>
           <p>{eachCountry.mame} </p>
           <p>{eachCountry.capital} </p>
           <p>{eachCountry.continent} </p>
